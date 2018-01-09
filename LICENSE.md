@@ -1,18 +1,4 @@
-var mongoose     = require('mongoose');
-var Schema       = mongoose.Schema;
-
-function add(temperature) {
-
-}
-
-var weatherSchema   = new Schema({
-    location : String,
-    temperatures : []
-});
-
-module.exports = mongoose.model('weather', weatherSchema);
-
-/*Copyright (c) 2018 Erik Karsten
+Copyright (c) 2018 Erik Karsten
 
 Permission is hereby granted, free of charge, to any person obtaining
 a copy of this software and associated documentation files (the
@@ -32,4 +18,3 @@ IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
 CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
 TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
 SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
-*/

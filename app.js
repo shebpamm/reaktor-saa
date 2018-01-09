@@ -68,22 +68,16 @@ router.route('/weathers/:weather_id')
     //REST Put
     .put(function(req, res) {
 
-    Weather.findById(req.params.weather_id, function(err, weather) {
+      logger.debug(req.params.weather_id)
+      Weather.update(
+        { _id: req.params.weather_id },
+        { $push: {temperatures : req.body.temperatures} },
 
-        if (err) res.send(err);
+        function(err) {
+          if (err)
+              res.send(err);
 
-        logger.info(weather.temperatures)
-        weather.temperatures.push(req.body.temperatures);
-
-
-
-        weather.save(function(err) {
-            if (err)
-                res.send(err);
-
-            res.json({ message: 'Weather updated.' });
-          });
-
+          res.json({ message: 'Weather updated.' });
         });
     })
 
@@ -111,3 +105,25 @@ app.listen(80);
 logger.debug('Started up.')
 
 var promise = mongoose.connect('mongodb://127.0.0.1', {useMongoClient: true,});
+
+/*Copyright (c) 2018 Erik Karsten
+
+Permission is hereby granted, free of charge, to any person obtaining
+a copy of this software and associated documentation files (the
+"Software"), to deal in the Software without restriction, including
+without limitation the rights to use, copy, modify, merge, publish,
+distribute, sublicense, and/or sell copies of the Software, and to
+permit persons to whom the Software is furnished to do so, subject to
+the following conditions:
+
+The above copyright notice and this permission notice shall be included
+in all copies or substantial portions of the Software.
+
+THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND,
+EXPRESS OR IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF
+MERCHANTABILITY, FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT.
+IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY
+CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF CONTRACT,
+TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE
+SOFTWARE OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+*/
