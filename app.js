@@ -60,8 +60,7 @@ router.route('/weathers/:weather_id')
     //REST Get
     .get(function(req, res) {
         Weather.findById(req.params.weather_id, function(err, weather) {
-            if (err)
-                res.send(err);
+            if (err) res.send(err);
             res.json(weather);
         });
     })
@@ -71,10 +70,10 @@ router.route('/weathers/:weather_id')
 
     Weather.findById(req.params.weather_id, function(err, weather) {
 
-        if (err)
-            res.send(err);
+        if (err) res.send(err);
 
-        weather.location = req.body.location;
+        logger.info(weather.temperatures)
+        weather.temperatures.push(req.body.temperatures);
 
 
 
