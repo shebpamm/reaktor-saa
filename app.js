@@ -97,7 +97,26 @@ router.route('/weathers/:weather_id')
 app.use('/api', router)
 
 app.get('/', function (req, res) {
-  res.sendFile(path.join(__dirname + '/client/index.html'));
+  res.sendFile(path.join(__dirname + '/client/html/index.html'));
+})
+
+app.get('*.html', function (req, res) {
+  logger.info(req.originalUrl)
+  res.sendFile(path.join(__dirname + '/client/html/' + req.originalUrl));
+})
+
+app.get('*.css', function (req, res) {
+  logger.info(req.originalUrl)
+  res.sendFile(path.join(__dirname + '/client/css/' + req.originalUrl));
+})
+
+app.get('*.js', function (req, res) {
+  logger.info(req.originalUrl)
+  res.sendFile(path.join(__dirname + '/client/js/' + req.originalUrl));
+})
+
+app.get('/resources/*', function (req, res) {
+  res.sendFile(path.join(__dirname + '/client/' + req.originalUrl));
 })
 
 app.listen(80);
