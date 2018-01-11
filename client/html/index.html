@@ -1,31 +1,51 @@
+<!DOCTYPE html>
 <html>
   <head>
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,400&amp;subset=latin-ext" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <script src="menu_animations.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
 
   <body>
-    <h1 class="header">Weathers</h1>
+    <h1 class="header">I eat ass</h1>
     <div class="container">
       <div class="list">
         <div class="list-row">
-          <span>Tokyo</span>
-          <div class="test">Testing this testable testing test test.</div>
+          <span class="location">Tokyo</span><span class="temperature">9°C</span>
+          <div class="content" style="display: none;">
+            <dl style="text-align:center">
+              <dt class="coords"><img src="resources/position-marker-icon.svg" class="icon"></img><span class="coords">35.6584421, 139.7328635<span></dt>
+              <dt><span style="float:left">Kuumin hetki tänään</span><span>14:03</span><span style="float:right; color:#DD2C00">13°C</span></dt>
+              <dt><span style="float:left">Kylmin hetki tänään</span><span>18:22</span><span style="float:right; color:#01579B">6°C</span></dt>
+            </dl>
+            <div class="addForm">
+              <input placeholder="Uusi lämpötila..." id="tempInput"></input>
+            </div>
+          </div>
         </div>
+
         <div class="list-row">
-          <span>Helsinki</span>
+          <span class="location">Helsinki</span><span class="temperature">-4°C</span>
+          <div class="content" style="display: none;">Testing this testable testing test test.</div>
         </div>
+
         <div class="list-row">
-          <span>New York</span>
+          <span class="location">New York</span><span class="temperature">4°C</span>
+          <div class="content" style="display: none;">Testing this testable testing test test.</div>
         </div>
+
         <div class="list-row">
-          <span>Amsterdam</span>
+          <span class="location">Amsterdam</span><span class="temperature">6°C</span>
+          <div class="content" style="display: none;">Testing this testable testing test test.</div>
         </div>
+
         <div class="list-row">
-          <span>Dubai</span>
+          <span class="location">Dubai</span><span class="temperature">23°C</span>
+          <div class="content" style="display: none;">Testing this testable testing test test.</div>
         </div>
+
       </div>
     </div>
   </body>

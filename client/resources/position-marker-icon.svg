@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Svg Vector Icons : http://www.onlinewebfonts.com/icon -->
+
+<svg
+   xmlns:dc="http://purl.org/dc/elements/1.1/"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   version="1.1"
+   x="0px"
+   y="0px"
+   viewBox="0 0 1000 1000"
+   enable-background="new 0 0 1000 1000"
+   xml:space="preserve"
+   id="svg10"
+   sodipodi:docname="position-marker-icon.svg"
+   inkscape:version="0.92.2 (5c3e80d, 2017-08-06)"><defs
+     id="defs14" /><sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1920"
+     inkscape:window-height="1001"
+     id="namedview12"
+     showgrid="false"
+     inkscape:zoom="0.472"
+     inkscape:cx="549.13999"
+     inkscape:cy="481.96728"
+     inkscape:window-x="-9"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg10" /><metadata
+     id="metadata2"> Svg Vector Icons : http://www.onlinewebfonts.com/icon <rdf:RDF><cc:Work
+     rdf:about=""><dc:format>image/svg+xml</dc:format><dc:type
+       rdf:resource="http://purl.org/dc/dcmitype/StillImage" /><dc:title></dc:title></cc:Work></rdf:RDF></metadata><g
+     id="g8"><path
+       d="M 500,990 484.6,970.2 C 471.4,957 196.1,628.8 147.6,494.5 134.4,454.9 125.6,415.2 125.6,373.4 125.6,173 293,10 500,10 c 207,0 374.4,163 374.4,363.4 0,193.8 -343.6,581.4 -359,599 z m 0,-956 c -182.8,0 -348.3,163.1 -348.3,339.3 0,35.2 6.6,72.7 17.6,105.7 39.6,110.1 270.59811,401.46026 332.19811,476.36026 C 571.99811,873.86026 852.3,529.7 852.3,373.3 852.3,197.2 682.8,34 500,34 Z"
+       id="path4"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="cccsssscssccss" /><path
+       d="m 500,565 c -96.9,0 -176.2,-79.3 -176.2,-176.2 0,-96.9 79.3,-176.2 176.2,-176.2 96.9,0 176.2,79.3 176.2,176.2 0,96.9 -79.3,176.2 -176.2,176.2 z m -1.49811,-328.3 c -72.7,0 -150.60189,79.5 -150.60189,152.1 0,72.7 79.98675,152.1 152.58675,152.1 72.7,0 156.10757,-79.5 156.10757,-152.1 0,-72.7 -85.39243,-152.1 -158.09243,-152.1 z"
+       id="path6"
+       inkscape:connector-curvature="0"
+       sodipodi:nodetypes="ssssssssss" /></g></svg>

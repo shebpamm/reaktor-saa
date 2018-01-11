@@ -53,15 +53,77 @@
   transition: color 0.5s;
 }
 
+.temperature {
+  float: right;
+  font-size: 35px;
+
+  transition: color 0.5s;
+}
+
+.list-row:hover > .temperature {
+  color: #D50000;
+  transition: color 0.5s;
+}
+
 .active {
   transition: padding 1s;
+}
+
+.active-temp {
+  color: #000000;
+}
+
+.location {
+  font-size: 35px;
+}
+
+dt > span {
+  font-size: 18px;
+  color: black;
+}
+
+.coords {
+  font-size: 20px;
+  padding-top: 10px;
+  padding-bottom: 15px;
 }
 
 span {
   font-family: 'Roboto', sans-serif;
   font-weight: 100;
-  font-size: 35px;
+}
 
+.icon {
+  width: 25px;
+  display: inline;
+  height: auto;
+  padding-right: 5px;
+  margin-top: -5px;
+}
+
+.content {
+  position: relative;
+  height: 80%;
+  cursor: auto;
+}
+
+.addForm {
+
+
+
+  height: 30px;
+  width: 100%;
+  position: absolute;
+
+  bottom: 0;
+}
+
+.addForm > input {
+  height: 25px;
+  border: 0;
+  border-bottom: 1px solid black;
+  background: linear-gradient(#00000000, #0000000E);
+  width: 100px;
 }
 
 html, body {
