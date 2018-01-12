@@ -16,12 +16,14 @@ function Open(elem) {
   elem.find('.temperature').addClass("active-temp")
   elem.find('.content').show(600);
   elem.animate({height : 300}, 600, function() {
+    elem.find('input').show(600);
   })
 }
 
 function Close(elem) {
   elem.removeClass('active')
   elem.find('.temperature').removeClass("active-temp")
+  elem.find('input').hide(300);
   elem.find('.content').hide(300);
   elem.animate({height: menuHeight}, 600, function(){
   });
@@ -29,13 +31,18 @@ function Close(elem) {
 }
 
 function resizeInput(e) {
-  $(e.target).animate({width : 25}, 600)
+  $(e.target).animate({width : 25}, 600, function(){
+    $('.addForm > button').show(100);
+  })
   $(e.target).attr('placeholder', '');
 }
 
 function resizeInputDown(e) {
+  console.log(e)
+  if(e.target.value != "") return;
   $(e.target).animate({width : 100}, 600, function() {
     $(e.target).attr('placeholder', 'Uusi Lämpötila...');
+    $('.addForm > button').hide(100);
   })
 
 }
