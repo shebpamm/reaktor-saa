@@ -38,7 +38,6 @@ function resizeInput(e) {
 }
 
 function resizeInputDown(e) {
-  console.log(e)
   if(e.target.value != "") return;
   $(e.target).animate({width : 100}, 600, function() {
     $(e.target).attr('placeholder', 'Uusi Lämpötila...');
@@ -48,7 +47,7 @@ function resizeInputDown(e) {
 }
 
 $( document ).ready(function() {
-    menus = $('.list-row');
+    var menus = $('.list-row');
     menuHeight = menus.first().height();
     menus.click(onClick);
     $("#tempInput").focus(resizeInput)

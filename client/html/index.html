@@ -4,24 +4,24 @@
     <link rel="stylesheet" type="text/css" href="styles.css">
     <link href="https://fonts.googleapis.com/css?family=Roboto:100,400&amp;subset=latin-ext" rel="stylesheet">
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
-    <script src="menu_animations.js"></script>
+    <script src="bundle.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
   </head>
 
   <body>
-    <h1 class="header">Weathers</h1>
-    <div class="container">
-      <div class="list">
-        <div class="list-row">
+    <h1 class="header" data-component="header">Weathers</h1>
+    <div class="container" data-component="container">
+      <div class="list" id="list" data-component="list">
+        <div class="list-row" data-component="listRow">
           <span class="location">Tokyo</span><span class="temperature">9°C</span>
           <div class="content" style="display: none;">
             <dl style="text-align:center">
               <dt class="coords"><img src="resources/position-marker-icon.svg" class="icon"></img><span class="coords">35.6584421, 139.7328635<span></dt>
-              <dt><span style="float:left">Kuumin hetki tänään</span><span>14:03</span><span style="float:right; color:#DD2C00">13°C</span></dt>
+              <dt><span style="float:left" data-component="statRow">Kuumin hetki tänään</span><span>14:03</span><span style="float:right; color:#DD2C00">13°C</span></dt>
               <dt><span style="float:left">Kylmin hetki tänään</span><span>18:22</span><span style="float:right; color:#01579B">6°C</span></dt>
               <dt><span style="float:left">Lämpötilojen keskiarvo</span><span>18:22</span><span style="float:right; color:#01579B">6°C</span></dt
             </dl>
-            <div class="addForm">
+            <div class="addForm" data-component="addForm">
               <input placeholder="Uusi lämpötila..." id="tempInput" style="display:none;"></input>
               <button style="display:none">+</button>
             </div>

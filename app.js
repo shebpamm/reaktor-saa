@@ -92,8 +92,6 @@ router.route('/weathers/:weather_id')
         }
       )
     })
-
-
 app.use('/api', router)
 
 app.get('/', function (req, res) {
@@ -112,7 +110,7 @@ app.get('*.css', function (req, res) {
 
 app.get('*.js', function (req, res) {
   logger.info(req.originalUrl)
-  res.sendFile(path.join(__dirname + '/client/js/' + req.originalUrl));
+  res.sendFile(path.join(__dirname + '/client/js/build/' + req.originalUrl));
 })
 
 app.get('/resources/*', function (req, res) {
