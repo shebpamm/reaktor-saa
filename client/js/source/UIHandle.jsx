@@ -1,5 +1,4 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-
-ReactDOM.render(<statRow />, document.getElementById('list'))
+ReactDOM.render(<Container />, document.getElementById('root'))
