@@ -1,7 +1,7 @@
 var menuHeight;
 var numofentries = 9;
 
-function onClick(e) {
+export default function onClick(e) {
   if($(e.target).closest('.content').length) return; //Check that menu is not triggered from content box
   var elem = $(e.target).hasClass('list-row') ? $(e.target) : $(e.target).closest('.list-row'); //Check if element clicked was list-row or a child of it. Assign list-row to elem
   if (elem.hasClass('active')) Close(elem);
@@ -53,5 +53,4 @@ $( document ).ready(function() {
     $("#tempInput").focus(resizeInput)
     $("#tempInput").blur(resizeInputDown)
 
-  //  menus.bind('oanimationend animationend webkitAnimationEnd', animationDone(e))
 });

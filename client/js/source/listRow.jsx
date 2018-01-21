@@ -1,13 +1,18 @@
 import React from "react";
-import statRow from "./statRow.jsx";
-import addForm from "./addForm.jsx";
+import StatRow from "./statRow.jsx";
+import AddForm from "./addForm.jsx";
+import onClick from "./menu_animations.jsx"
 
-class listRow extends React.Component {
+class ListRow extends React.Component {
+  componentDidMount() {
+
+  }
+
   render() {
     return (
-      <div className="list-row">
-        <span className="location">Tokyo</span>
-        <span className="temperature">9°C</span>
+      <div className="list-row" onClick={onClick}>
+        <span className="location">{this.props.city}</span>
+        <span className="temperature">{this.props.temperature}°C</span>
         <div
           className="content"
           style={{
@@ -26,7 +31,7 @@ class listRow extends React.Component {
               </span>
             </dt>
             <dt>
-              <statRow />
+              <StatRow />
               <span>14:03</span>
               <span
                 style={{
@@ -73,7 +78,7 @@ class listRow extends React.Component {
                 6°C
               </span>
             </dt>
-            <addForm />
+            <AddForm />
           </dl>
         </div>
       </div>
@@ -81,4 +86,4 @@ class listRow extends React.Component {
   }
 }
 
-export default listRow;
+export default ListRow;

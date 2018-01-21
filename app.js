@@ -35,6 +35,7 @@ router.route('/weathers').post(function(req, res) {
 
   weather.location = req.body.location;
   weather.temperatures = req.body.temperatures;
+  weather.coords = req.body.coords;
 
   weather.save(function(err) {
     if (err)

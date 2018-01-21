@@ -1,11 +1,11 @@
 import React from "react";
 
-class addForm extends React.Component {
+class AddForm extends React.Component {
   render() {
     return (
       <div className="addForm">
         <input
-          placeholder="Uusi l\xE4mp\xF6tila..."
+          placeholder="Uusi lämpötila..."
           id="tempInput"
           style={{
             display: "none"
@@ -23,4 +23,4 @@ class addForm extends React.Component {
   }
 }
 
-export default addForm;
+export default AddForm;

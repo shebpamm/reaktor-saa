@@ -1,6 +1,6 @@
 import React from "react";
 
-class statRow extends React.Component {
+class StatRow extends React.Component {
   render() {
     return (
       <span
@@ -14,4 +14,4 @@ class statRow extends React.Component {
   }
 }
 
-export default statRow;
+export default StatRow;
