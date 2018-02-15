@@ -71,8 +71,7 @@ class ListRow extends React.Component {
 
               <span
                 style={{
-                  float: "right",
-                  color: "#01579B"
+                  float: "right"
                 }}
               >
                 6°C
