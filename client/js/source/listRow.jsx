@@ -68,7 +68,7 @@ class ListRow extends React.Component {
               >
                 Lämpötilojen keskiarvo
               </span>
-              <span>18:22</span>
+
               <span
                 style={{
                   float: "right",
