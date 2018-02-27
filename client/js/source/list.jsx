@@ -27,12 +27,14 @@ class List extends React.Component {
                 entry => entry.temperatures
               );
 
+              var coords = data.map( entry => entry.coords );
 
               var locations = data.map( entry => entry.location );
               self.setState({
                 cities : locations,
                 temperatures: temperatures,
-                fulltemps: fulltemps
+                fulltemps: fulltemps,
+                coords: coords
               });
             },
             error : function(jqXHR, textStatus, errorThrown) {
@@ -48,7 +50,7 @@ class List extends React.Component {
     return (
       <div className="list" id="list">
         {this.state.cities.map( (name, i) =>
-          <ListRow city={name} key={name} temperature={this.state.temperatures[i]} fulltemps={this.state.fulltemps[i]} />
+          <ListRow city={name} key={name} temperature={this.state.temperatures[i]} fulltemps={this.state.fulltemps[i]} coords={this.state.coords[i]} />
         )}
       </div>
     );

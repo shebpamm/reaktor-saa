@@ -1,7 +1,7 @@
 var menuHeight;
 var numofentries = 9;
 
-export default function onClick(e) {
+export function onClick(e) {
   if($(e.target).closest('.content').length) return; //Check that menu is not triggered from content box
   var elem = $(e.target).hasClass('list-row') ? $(e.target) : $(e.target).closest('.list-row'); //Check if element clicked was list-row or a child of it. Assign list-row to elem
   if (elem.hasClass('active')) Close(elem);
@@ -30,15 +30,14 @@ function Close(elem) {
   elem.css('height', 'auto')
 }
 
-function resizeInput(e) {
+export function resizeInput(e) {
   $(e.target).animate({width : 25}, 600, function(){
     $('.addForm > button').show(100);
   })
   $(e.target).attr('placeholder', '');
-  console.log("asd")
 }
 
-function resizeInputDown(e) {
+export function resizeInputDown(e) {
   if(e.target.value != "") return;
   $(e.target).animate({width : 100}, 600, function() {
     $(e.target).attr('placeholder', 'Uusi Lämpötila...');
@@ -47,11 +46,34 @@ function resizeInputDown(e) {
 
 }
 
+export function inputCheck(e) {
+  var val = e.target.value;
+  if(e.key == '-' && val.length != 0) {
+    e.preventDefault();
+    e.stopPropagation();
+  }
+  if(e.key == '.' && val.replace('-', '').split('.').length == 1) {} else
+  if ('0123456789-.'.indexOf(e.key) == -1 || (val.replace('-','').indexOf('.') == -1 && val.replace('-','').length > 1) || (val.replace('-','').indexOf('.') != -1 && val.replace('-','').slice(val.replace('-','').indexOf('.')).length > 2) ){
+    e.preventDefault();
+    e.stopPropagation();
+  }
+}
+
+export function submitTemperature(e) {
+  $.ajax({
+    type: "POST",
+    url: "/api",
+    data: formData,
+    success: function(){},
+    dataType: "json",
+    contentType : "application/json"
+  });
+}
+
 $( document ).ready(function() {
     var menus = $('.list-row');
     menuHeight = menus.first().height();
     menus.click(onClick);
     $(".tempInput").focus(resizeInput);
     $(".tempInput").blur(resizeInputDown);
-
 });

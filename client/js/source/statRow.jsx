@@ -18,22 +18,25 @@ class StatRow extends React.Component {
 
   render() {
     return (
-      <dt>
+      <dt style={{
+        height: this.state.temperature ? '' : '7px'
+      }}>
       <span
         style={{
           float: "left"
         }}
       >
-        {this.state.text}
+        {this.state.temperature ? this.state.text : ''}
       </span>
       <span>{this.state.time}</span>
       <span
         style={{
           float: "right",
-          color: this.props.color
+          color: this.props.color,
+          height: this.state.temperature ? '' : '7px'
         }}
       >
-        {this.state.temperature}°C
+        {this.state.temperature ? this.state.temperature + '°C' : ''}
       </span>
     </dt>
     );

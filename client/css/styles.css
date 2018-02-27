@@ -46,7 +46,6 @@ padding:15px 5px;
 }
 
 .list-row:hover {
-color:#D50000;
 cursor:pointer;
 transition:color .5s;
 }
@@ -95,6 +94,12 @@ padding-bottom:15px;
 span {
 font-family:Roboto, sans-serif;
 font-weight:100;
+}
+
+h4 {
+  font-family:Roboto, sans-serif;
+  font-weight:100;
+  font-size: 22px;
 }
 
 .icon {

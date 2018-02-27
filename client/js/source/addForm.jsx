@@ -1,4 +1,5 @@
 import React from "react";
+import * as animations from "./menu_animations.jsx"
 
 class AddForm extends React.Component {
   render() {
@@ -10,11 +11,15 @@ class AddForm extends React.Component {
           style={{
             display: "none"
           }}
+          onFocus={animations.resizeInput}
+          onBlur={animations.resizeInputDown}
+          onKeyPress={animations.inputCheck}
         />
         <button
           style={{
             display: "none"
           }}
+          onClick={animations.submitTemperature}
         >
           +
         </button>

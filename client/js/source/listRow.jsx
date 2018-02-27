@@ -1,7 +1,7 @@
 import React from "react";
 import StatRow from "./statRow.jsx";
 import AddForm from "./addForm.jsx";
-import onClick from "./menu_animations.jsx"
+import * as animations from "./menu_animations.jsx"
 
 class ListRow extends React.Component {
 
@@ -17,8 +17,8 @@ class ListRow extends React.Component {
       sum += n;
     })
 
-    var maxTemp = fulltemps.length ? fulltemps[temps.indexOf(Math.max(...temps))] : {temperature : 0, timestamp : 0};
-    var minTemp = fulltemps.length ? fulltemps[temps.indexOf(Math.min(...temps))] : {temperature : 0, timestamp : 0};
+    var maxTemp = fulltemps.length ? fulltemps[temps.indexOf(Math.max(...temps))] : {temperature : null, timestamp : 0};
+    var minTemp = fulltemps.length ? fulltemps[temps.indexOf(Math.min(...temps))] : {temperature : null, timestamp : 0};
 
     var mean = {
       temperature : sum / fulltemps.length,
@@ -34,9 +34,9 @@ class ListRow extends React.Component {
 
   render() {
     return (
-      <div className="list-row" onClick={onClick}>
-        <span className="location">{this.props.city}</span>
-        <span className="temperature">{this.props.temperature}°C</span>
+      <div className="list-row" onClick={animations.onClick}><
+        span className="location">{this.props.city}</span>
+        <span className="temperature">{this.props.temperature ? this.props.temperature + '°C': '?'}</span>
         <div
           className="content"
           style={{
@@ -51,13 +51,15 @@ class ListRow extends React.Component {
             <dt className="coords">
               <img src="resources/position-marker-icon.svg" className="icon" />
               <span className="coords">
-                35.6584421, 139.7328635<span />
+                {this.props.coords}<span />
               </span>
             </dt>
 
               <StatRow color="#DD2C00" text="Kuumin hetki tänään" temp={this.state.maxTemp} />
               <StatRow color="#01579B" text="Kylmin hetki tänään" temp={this.state.minTemp} />
-              <StatRow color="" text="Lämpötilojen keskiarvo" temp={this.state.mean} />
+              <StatRow text="Lämpötilojen keskiarvo" temp={this.state.mean} />
+
+              <h4>{this.props.temperature ? '' : 'Ei säähavaintoja.'}</h4>
 
             <AddForm />
           </dl>

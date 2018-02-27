@@ -24,7 +24,7 @@ router.use(function(req, res, next) {
 });
 
 router.get('/', function(req, res) {
-  res.json({ message : 'Yaya! Hello World!' });
+  res.json({ message : 'API documentation can be found here: ' });
 })
 
 router.route('/weathers').post(function(req, res) {
