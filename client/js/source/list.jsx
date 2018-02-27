@@ -27,7 +27,6 @@ class List extends React.Component {
                 entry => entry.temperatures
               );
 
-              console.log(fulltemps);
 
               var locations = data.map( entry => entry.location );
               self.setState({

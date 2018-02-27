@@ -6,7 +6,7 @@ class AddForm extends React.Component {
       <div className="addForm">
         <input
           placeholder="Uusi lämpötila..."
-          id="tempInput"
+          className="tempInput"
           style={{
             display: "none"
           }}

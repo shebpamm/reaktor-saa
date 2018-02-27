@@ -62,6 +62,7 @@ color:#D50000;
 transition:color .5s;
 }
 
+
 .active {
 transition:padding 1s;
 }
@@ -72,6 +73,12 @@ color:#000;
 
 .location {
 font-size:35px;
+transition: .5s;
+}
+
+.list-row:hover > .location {
+  color:#D50000;
+  transition:color .5s;
 }
 
 dt > span {

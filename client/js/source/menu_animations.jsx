@@ -35,6 +35,7 @@ function resizeInput(e) {
     $('.addForm > button').show(100);
   })
   $(e.target).attr('placeholder', '');
+  console.log("asd")
 }
 
 function resizeInputDown(e) {
@@ -50,7 +51,7 @@ $( document ).ready(function() {
     var menus = $('.list-row');
     menuHeight = menus.first().height();
     menus.click(onClick);
-    $("#tempInput").focus(resizeInput)
-    $("#tempInput").blur(resizeInputDown)
+    $(".tempInput").focus(resizeInput);
+    $(".tempInput").blur(resizeInputDown);
 
 });

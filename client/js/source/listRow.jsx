@@ -4,9 +4,33 @@ import AddForm from "./addForm.jsx";
 import onClick from "./menu_animations.jsx"
 
 class ListRow extends React.Component {
-  componentDidMount() {
 
-  }
+  constructor(props) {
+    super(props);
+
+    var fulltemps = props.fulltemps;
+    var sum = 0;
+    var temps = fulltemps.map(
+      entry => entry.temperature
+    );
+    temps.forEach(function (n) {
+      sum += n;
+    })
+
+    var maxTemp = fulltemps.length ? fulltemps[temps.indexOf(Math.max(...temps))] : {temperature : 0, timestamp : 0};
+    var minTemp = fulltemps.length ? fulltemps[temps.indexOf(Math.min(...temps))] : {temperature : 0, timestamp : 0};
+
+    var mean = {
+      temperature : sum / fulltemps.length,
+      timestamp : 0
+    };
+
+    this.state = {
+      maxTemp : maxTemp,
+      minTemp : minTemp,
+      mean : mean
+    };
+  };
 
   render() {
     return (
@@ -30,53 +54,11 @@ class ListRow extends React.Component {
                 35.6584421, 139.7328635<span />
               </span>
             </dt>
-            <dt>
-              <StatRow />
-              <span>14:03</span>
-              <span
-                style={{
-                  float: "right",
-                  color: "#DD2C00"
-                }}
-              >
-                13°C
-              </span>
-            </dt>
-            <dt>
-              <span
-                style={{
-                  float: "left"
-                }}
-              >
-                Kylmin hetki tänään
-              </span>
-              <span>18:22</span>
-              <span
-                style={{
-                  float: "right",
-                  color: "#01579B"
-                }}
-              >
-                6°C
-              </span>
-            </dt>
-            <dt>
-              <span
-                style={{
-                  float: "left"
-                }}
-              >
-                Lämpötilojen keskiarvo
-              </span>
 
-              <span
-                style={{
-                  float: "right"
-                }}
-              >
-                6°C
-              </span>
-            </dt>
+              <StatRow color="#DD2C00" text="Kuumin hetki tänään" temp={this.state.maxTemp} />
+              <StatRow color="#01579B" text="Kylmin hetki tänään" temp={this.state.minTemp} />
+              <StatRow color="" text="Lämpötilojen keskiarvo" temp={this.state.mean} />
+
             <AddForm />
           </dl>
         </div>
