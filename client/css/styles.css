@@ -132,6 +132,10 @@ background:linear-gradient(#00000000,#0000000E);
 width:100px;
 }
 
+.addForm > button:focus {
+  border:1px solid #090;
+}
+
 .addForm > button {
   background: 0;
   border:1px solid #000;

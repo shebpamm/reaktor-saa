@@ -32,6 +32,32 @@ class ListRow extends React.Component {
     };
   };
 
+  componentWillReceiveProps(props) {
+    var fulltemps = props.fulltemps;
+    var sum = 0;
+    var temps = fulltemps.map(
+      entry => entry.temperature
+    );
+    temps.forEach(function (n) {
+      sum += n;
+    })
+
+    var maxTemp = fulltemps.length ? fulltemps[temps.indexOf(Math.max(...temps))] : {temperature : null, timestamp : 0};
+    var minTemp = fulltemps.length ? fulltemps[temps.indexOf(Math.min(...temps))] : {temperature : null, timestamp : 0};
+
+    var mean = {
+      temperature : sum / fulltemps.length,
+      timestamp : 0
+    };
+
+    this.setState({
+      maxTemp : maxTemp,
+      minTemp : minTemp,
+      mean : mean
+    });
+  };
+
+
   render() {
     return (
       <div className="list-row" onClick={animations.onClick}><
@@ -59,9 +85,9 @@ class ListRow extends React.Component {
               <StatRow color="#01579B" text="Kylmin hetki tänään" temp={this.state.minTemp} />
               <StatRow text="Lämpötilojen keskiarvo" temp={this.state.mean} />
 
-              <h4>{this.props.temperature ? '' : 'Ei säähavaintoja.'}</h4>
+              <h4>{this.props.temperature ? '' : 'Ei vielä säähavaintoja.'}</h4>
 
-            <AddForm />
+            <AddForm city_id={this.props.city_id} root={this.props.root} />
           </dl>
         </div>
       </div>

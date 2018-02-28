@@ -59,17 +59,6 @@ export function inputCheck(e) {
   }
 }
 
-export function submitTemperature(e) {
-  $.ajax({
-    type: "POST",
-    url: "/api",
-    data: formData,
-    success: function(){},
-    dataType: "json",
-    contentType : "application/json"
-  });
-}
-
 $( document ).ready(function() {
     var menus = $('.list-row');
     menuHeight = menus.first().height();

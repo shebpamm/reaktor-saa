@@ -7,7 +7,7 @@ class Container extends React.Component {
     return (
       <div className="container">
         <Header />
-        <List />
+        <List ref="root" />
       </div>
     );
   }

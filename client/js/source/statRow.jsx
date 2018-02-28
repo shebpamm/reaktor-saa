@@ -16,6 +16,18 @@ class StatRow extends React.Component {
     }
   }
 
+  componentWillReceiveProps(props) {
+    var date = new Date(props.temp.timestamp);
+
+    var time = props.temp.timestamp != 0 ? ("0" + date.getHours()).substr(-2) + ':' + ("0" + date.getMinutes()).substr(-2) : ' 	‌';
+
+    this.setState({
+      text : props.text,
+      time : time,
+      temperature : props.temp.temperature
+    });
+  }
+
   render() {
     return (
       <dt style={{
@@ -36,7 +48,7 @@ class StatRow extends React.Component {
           height: this.state.temperature ? '' : '7px'
         }}
       >
-        {this.state.temperature ? this.state.temperature + '°C' : ''}
+        {this.state.temperature ? this.state.temperature.toFixed(1) + '°C' : ''}
       </span>
     </dt>
     );

@@ -69,7 +69,7 @@ router.route('/weathers/:weather_id')
     //REST Put
     .put(function(req, res) {
 
-      logger.debug(req.params.weather_id)
+    logger.info(req)
       Weather.update(
         { _id: req.params.weather_id },
         { $push: {temperatures : req.body.temperatures} },
